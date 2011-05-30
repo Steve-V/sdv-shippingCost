@@ -16,7 +16,7 @@ def distanceToSupplier(supplier):
   if supplier == "B":
     return 50
   if supplier == "C":
-    return 3250
+    return 3520
 
 
 def orderCost(supplier, amount):
@@ -27,10 +27,10 @@ def processingCost():
   return 100
 
 def tonMiles(supplier, amount):
-  return ( tons(amount) * distanceToSupplier(supplier) )
+  return float( tons(amount) * distanceToSupplier(supplier) )
 
 def tons(amount):
-  return ( (amount * 100) / 2000)
+  return float( (float(amount) * 100) / 2000)
 
 def getInventoryCost(supplier, amount):
   pass
