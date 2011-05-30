@@ -2,7 +2,7 @@
 
 #import 
 
-def supplierCost(supplier):
+def toolingCost(supplier):
   if supplier == "A":
     return 15000
   if supplier == "B":
@@ -26,11 +26,19 @@ def orderCost(supplier, amount):
 def processingCost():
   return 100
 
-def tonMiles(supplier, amount):
-  return float( tons(amount) * distanceToSupplier(supplier) )
+def tonMiles(units, distance):
+  return float( tons(units) * distance )
 
-def tons(amount):
-  return float( (float(amount) * 100) / 2000)
+def tons(units):
+  return float( (float(units) * 100) / 2000)
+
+def freightCost(units, distance):
+  if units == 300:
+    return tonMiles(units, distance)
+  if units < 300:
+    return (1.3 * tonMiles(units, distance))
+  if units > 300:
+    return ( tonMiles(300, distance) + freightCost(units-300, distance) )
 
 def getInventoryCost(supplier, amount):
   pass
