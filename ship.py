@@ -110,14 +110,14 @@ def finalTotals(warehouse):
   
   if warehouse:
     print "============FINAL COST (Warehouse)==========="
-    print lowestA + toolingCost('A') + warehouseCost() + " " + str(orderA)
-    print lowestB + toolingCost('B') + warehouseCost() + " " + str(orderB)
-    print lowestC + toolingCost('C') + warehouseCost() + " " + str(orderC)
+    print str( lowestA + toolingCost('A') + warehouseCost() ) + " " + str(orderA)
+    print str( lowestB + toolingCost('B') + warehouseCost() ) + " " + str(orderB)
+    print str( lowestC + toolingCost('C') + warehouseCost() ) + " " + str(orderC)
   else:
     print "============FINAL COST (No Warehouse)==========="
-    print str(lowestA) + str(toolingCost('A') ) + " " + str(orderA)
-    print str(lowestB) + str(toolingCost('B') ) + " " + str(orderB)
-    print str(lowestC) + str(toolingCost('C') ) + " " + str(orderC)
+    print str( lowestA + toolingCost('A') ) + " " + str(orderA)
+    print str( lowestB + toolingCost('B') ) + " " + str(orderB)
+    print str( lowestC + toolingCost('C') ) + " " + str(orderC)
 
 def main():
   
