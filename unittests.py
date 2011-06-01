@@ -55,6 +55,26 @@ class shippingCostTests(unittest.TestCase):
   def test_cost_to_move_1400_units_one_mile(self):
     self.assertAlmostEqual( ship.freightCost(1400, 1), 73)
   
+  def test_carrying_cost_of_10_units_at_300_apiece(self):
+    self.assertAlmostEqual( ship.carryingCost(10, 300), 375)
   
+class fullOrderTests(unittest.TestCase):
+  def test_cost_of_20_units_50_miles_300_bucks_each(self):
+    #20 units = 1 ton, 50 miles at $1.30 per ton = 1.30*50
+    # = $65
+    
+    #processing cost = $100
+    
+    #cost of the units themselves = 370 * 20 = 7400
+    
+    #carrying cost = 
+    
+    #7400 + 100 + 925 + 65 = 8490
+    
+    self.assertAlmostEqual( ship.orderCost(20,'B'), 8490)
+  
+  def test_total_cost_of_20_unit_orders_from_B(self):
+    self.assertAlmostEqual( ship.yearlyCostOfOrders(20,'B'), 2547000)
+    
 if __name__ == '__main__':
 	unittest.main()
